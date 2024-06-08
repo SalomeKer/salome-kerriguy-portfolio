@@ -3,16 +3,20 @@
 @import url("https://use.typekit.net/mek2guw.css");
 
 @font-face {
-  font-family: 'PPEditorialNew-Ultralight.otf';
-  src: url('fonts/PPEditorialNew-Ultralight.otf') format('opentype');
-  font-weight: light;
+  font-family: 'PPEditorialNew';
+  src: url('fonts/PPEditorialNew-Ultralight.woff') format('woff'),
+       url('fonts/PPEditorialNew-UltralightItalic.woff2') format('woff2'),
+       url('fonts/PPEditorialNew-UltralightItalic.ttf') format('truetype');
+  font-weight: 100;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'PPEditorialNew-UltralightItalic.otf';
-  src: url('fonts/PPEditorialNew-UltralightItalic.otf') format('opentype');
-  font-weight: light;
+  font-family: 'PPEditorialNewItalic';
+  src: url('fonts/PPEditorialNew-UltralightItalic.woff') format('woff'),
+       url('fonts/PPEditorialNew-UltralightItalic.woff2') format('woff2'),
+       url('fonts/PPEditorialNew-UltralightItalic.ttf') format('truetype');
+  font-weight: 100;
   font-style: italic;
 }
 
@@ -41,19 +45,22 @@ p {
 
 h2 {
   font-size: 13vw;
-  font-family: "PPEditorialNew-Ultralight.otf", sans-serif;
+  font-family: "PPEditorialNew", sans-serif;
   font-weight: 100;
   letter-spacing: -.05em;
 }
 
 .special-word {
-  font-family: "PPEditorialNew-UltralightItalic.otf", sans-serif;
+  font-family: 'PPEditorialNew', sans-serif;
+  font-style: italic;
   font-weight: 100;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h3 {
   font-size: 6vw;
-  font-family: "PPEditorialNew-Ultralight.otf", sans-serif;
+  font-family: "PPEditorialNew", sans-serif;
   font-weight: 100;
   letter-spacing: -2px;
   line-height: 103%;
@@ -61,7 +68,7 @@ h3 {
 
 h4 {
   font-size: 3.5vw;
-  font-family: "PPEditorialNew-Ultralight.otf", sans-serif;
+  font-family: "PPEditorialNew", sans-serif;
   font-weight: 100;
   letter-spacing: 0px;
   color: white;
@@ -277,7 +284,7 @@ a {
   justify-content: space-around;
   margin: auto;
   max-width: 50%;
-  font-family: 'PPEditorialNew-Ultralight.otf';
+  font-family: 'PPEditorialNew';
   font-size: 15px;
   align-items: center;
 }
