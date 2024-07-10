@@ -1,8 +1,30 @@
-document.addEventListener("DOMContentLoaded", function() {
+// Fonction pour charger la navigation bar à partir de navbar.html
+function loadNavbar() {
+    fetch('navbar.html')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Erreur de chargement de la navigation bar : ' + response.status);
+            }
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('navbar-placeholder').innerHTML = data;
+
+            // Une fois la navigation chargée, attacher les événements
+            attachNavbarEvents();
+        })
+        .catch(error => {
+            console.error('Erreur lors du chargement de la navigation bar : ', error);
+            // Gérer l'erreur : par exemple, afficher un message d'erreur alternatif
+            document.getElementById('navbar-placeholder').innerHTML = '<div>Erreur lors du chargement de la navigation bar.</div>';
+        });
+}
+
+// Fonction pour attacher les événements à la barre de navigation
+function attachNavbarEvents() {
     const menuIcon = document.querySelector('.menu-icon');
     const navMenu = document.querySelector('.nav-menu');
     const mobileLinks = document.querySelector('.mobile-links');
-    let lastScrollTop = 0;
 
     // Gérer l'activation et la désactivation du menu burger
     menuIcon.addEventListener('click', function() {
@@ -26,7 +48,6 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-
     // Smooth scroll pour tous les liens internes
     document.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', function(event) {
@@ -36,16 +57,21 @@ document.addEventListener("DOMContentLoaded", function() {
                 event.preventDefault();
                 // Stocke l'identifiant de l'ancre
                 var hash = this.hash;
-                // Fait défiler en douceur jusqu'à l'ancre avec une durée d'animation plus longue pour un défilement plus lent
+                // Fait défiler en douceur jusqu'à l'ancre avec une durée d'animation
                 document.querySelector(hash).scrollIntoView({
                     behavior: 'smooth',
-                    block: 'start', // ou 'center' pour centrer l'élément dans la vue
-                    inline: 'nearest', // ou 'start' ou 'end' pour aligner l'élément par rapport au bord
-                    duration: 10000 // Durée de l'animation en millisecondes (3 secondes dans cet exemple)
+                    block: 'start',
+                    inline: 'nearest',
+                    duration: 1000 // Durée de l'animation en millisecondes
                 });
             }
         });
     });
+}
+
+// Appeler la fonction pour charger la navigation bar
+document.addEventListener('DOMContentLoaded', function() {
+    loadNavbar();
 });
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -78,5 +104,51 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     showSlide(currentIndex); // Show the first slide initially
+});
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const visualDesigner = document.getElementById('visual-designer');
+    let lastScrollTop = 0;
+
+    // Animation d'apparition lors du chargement de la page
+    window.onload = () => {
+        visualDesigner.style.opacity = '1';
+    };
+
+    // Animation lors du défilement
+    window.addEventListener('scroll', function() {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        if (scrollTop > lastScrollTop) {
+            // Scrolling down
+            visualDesigner.classList.add('shrink');
+        } else {
+            // Scrolling up
+            visualDesigner.classList.remove('shrink');
+        }
+        lastScrollTop = scrollTop;
+    });
+});
+
+function toggleTheme() {
+    document.body.classList.toggle('alternate-theme');
+}
+document.addEventListener("DOMContentLoaded", function() {
+    // Début du défilement à 0%
+    let currentNumber = 0;
+    // Intervalle de mise à jour toutes les secondes (1000ms)
+    const interval = setInterval(function() {
+        // Mettre à jour le numéro affiché par incréments de 10
+        document.getElementById('counter').textContent = currentNumber + '%';
+        // Augmenter le numéro actuel de 10 jusqu'à atteindre 100
+        if (currentNumber === 100) {
+            clearInterval(interval); // Arrêter l'intervalle une fois atteint 100%
+            // Ajouter la classe 'hidden' pour déclencher la transition d'opacité
+            document.getElementById('loader').classList.add('hidden');
+        } else {
+            currentNumber += 10; // Augmenter le numéro de 10
+        }
+    }, 200); // Mettre à jour toutes les secondes (1000ms)
 });
 
