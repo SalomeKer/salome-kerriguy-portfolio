@@ -492,9 +492,6 @@ margin-left: 5Px;
   padding-top: 50px;
 
 }
-.section-cinema {
-  height: 100vh;
-}
 
 .section-accroche {
   height: 100vh;
@@ -520,6 +517,10 @@ margin-left: 5Px;
   z-index: 10;
   text-align: right;
   line-height: 120px;
+}
+
+.display-image{
+  display: none;
 }
 
 .section-card{
@@ -604,7 +605,7 @@ margin-left: 5Px;
 }
 
 .footer-link:hover p{
-  font-size: 25px;
+  padding-right: 0px;
 }
 
 .footer-link p{
@@ -615,6 +616,8 @@ margin-left: 5Px;
 }
 .footer-link p{
   cursor: pointer;
+  padding-right: 10px;
+
 }
 
 
@@ -635,6 +638,10 @@ margin-left: 5Px;
 
 /* Media queries pour les petits écrans */
 @media screen and (max-width: 768px) {
+
+  .first{
+    height: 100vh;
+  }
   .footer-content {
       flex-direction: column;
       align-items: flex-start;
@@ -648,19 +655,14 @@ margin-left: 5Px;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 @media screen and (max-width: 957px) {
+  .cv-button{
+    margin-top: 0px;
+  }
+  .display{
+    font-size: 70px;
+    line-height: normal;
+  }
   .line-text-container h2 {
     margin-bottom: 20px;
   }
@@ -678,51 +680,39 @@ margin-left: 5Px;
   .project-wrapper1 {
     display: none !important; /* Utilisez !important pour garantir que la règle est appliquée */
   }
-  .menu-icon {
-    display: block;
-  }
 
-  .nav-menu {
-    display: none;
-  }
-
-  .mobile-links {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100vh;
-    color: #151617;
-  background-color: #f7f7f5;
-    z-index: 1000;
-    padding-top: 60px;
-    transition: all 0.3s ease;
-  }
-
-  .nav-link {
-    font-size: 25px;
-    padding: 15px;
-    margin-left: auto;
-    margin-right: auto;
-  }
 }
-
-
-@media screen and (max-width: 850px) {
-  
-  .bloc-cinema-img{
-    display: none;
-  }
-}
-
-
 
 
 
 /* Responsive Styles */
 @media screen and (max-width: 768px) {
+  .display{
+    font-size: 80px;
+    line-height: normal;
+    margin-top: 15px;
+  }
+ 
+  .accroche-texte p{
+    font-size: 15px;
+  }
+  .cv-button {
+    display: none;
+  }
+  .accroche-img{
+    display: none;
+  }
+  .display-image{
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+  }
+  .display-image img{
+    width: 250px;
+    height: 100%;
+  }
   .section {
     flex-direction: column;
   }
@@ -755,6 +745,9 @@ margin-left: 5Px;
 
 
 @media screen and (max-width: 500px) {
+  .accroche-texte p{
+    width: 100%;
+  }
   h3{
     font-size: 35px;
     line-height: normal;
