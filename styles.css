@@ -504,12 +504,27 @@ margin-left: 5Px;
   align-items: center;
   padding: 100px 0;
   height: fit-content;
-  background-color: #f7f7f5;
+  z-index: 9999;
+
+}
+
+.sticky-title {
+  position: sticky;
+  top: 50%; /* Pour le centrage vertical */
+  transform: translateY(-50%);
+  width: 100%;
+  text-align: center;
+  background-color: #f7f7f5; /* Fond pour contraste */
+  z-index: -1000; /* Assure que le titre reste au-dessus du contenu */
+  font-size: 130px; /* Ajustez la taille de police selon votre besoin */
+  font-family: "PPEditorialNew", sans-serif;
+  font-weight: 100;
+  padding: 10px 0; /* Espace intérieur pour le titre */
 }
 
 .card-row {
   display: flex;
-  height: 60vh;
+  height: 70vh;
   justify-content: space-around;
   width: 100%;
   max-width: 1200px;
@@ -519,7 +534,7 @@ margin-left: 5Px;
 }
 
 .section-card {
-  width: 48%;
+  width: fit-content;
   gap: 10px;
   height: fit-content;
   background-color: white;
@@ -528,26 +543,28 @@ margin-left: 5Px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 0.4px solid #151617;
+
 }
 
 .section-card img {
-  width: 100%;
+  width: 380px;
   height: auto;
   margin-top: 10px;
 }
 .card1{
-  transform: rotate(-2deg)
+  transform: rotate(-2deg);
+
 }
 .card2{
-  margin-top: 120px;
+  margin-top: 160px;
   transform: rotate(2deg)
 }
 .card3{
   transform: rotate(-2deg)
 }
 .card4{
-  margin-top: 120px;
+  margin-top: 160px;
   transform: rotate(2deg)
 }
 .card5{
@@ -555,7 +572,7 @@ margin-left: 5Px;
 }
 
 .card6{
-  margin-top: 120px;
+  margin-top: 160px;
     transform: rotate(2deg)
 
 }
@@ -563,21 +580,30 @@ margin-left: 5Px;
 /* Responsive Styles */
 @media screen and (max-width: 768px) {
 
+  .sticky-title{
+    display: none;
+  }
+
+  .section-card img {
+    width: 300px;
+    height: auto;
+    margin-top: 10px;
+  }
 
   .card-row {
       flex-direction: column;
       align-items: center;
       height: auto;
     margin-bottom: 20px;
-    padding-top: 50px;
+    padding-top: 20px;
   }
   .card{
     padding-bottom: 30px;
   }
   .section-card {
       width: 100%;
-      margin-bottom: 20px;
-      margin-top: 10px;
+      margin-bottom: 0px;
+      margin-top: 50px;
   }
 }
 
@@ -597,7 +623,7 @@ margin-left: 5Px;
 }
 
 .section-card{
-  width: 300px;
+  width: fit-content;
   gap: 10px;
   height: fit-content;
   background-color: white;
@@ -609,7 +635,7 @@ margin-left: 5Px;
 }
 
 .section-card img{
-  width: 100%;
+  width: 400PX;
   height: auto;
   margin-top: 10PX;
 }
@@ -711,6 +737,12 @@ margin-left: 5Px;
 
 /* Media queries pour les petits écrans */
 @media screen and (max-width: 768px) {
+
+  .section-card img{
+    width: 300PX;
+    height: auto;
+    margin-top: 10PX;
+  }
   .first{
     padding-top: 0px;
   }
@@ -848,6 +880,10 @@ margin-left: 5Px;
 
 
 @media screen and (max-width: 500px) {
+
+  .section-card img {
+    width: 250px;
+  }
   .accroche-texte p{
     width: 100%;
   }

@@ -152,3 +152,14 @@ document.addEventListener("DOMContentLoaded", function() {
     }, 200); // Mettre à jour toutes les secondes (1000ms)
 });
 
+// Exemple de code JavaScript pour ajuster la classe du titre lorsque l'utilisateur atteint le footer
+window.addEventListener('scroll', function() {
+    var footer = document.querySelector('.footer');
+    var title = document.querySelector('.sticky-title');
+    
+    if (footer.getBoundingClientRect().top <= window.innerHeight) {
+        title.classList.remove('sticky-title');
+    } else {
+        title.classList.add('sticky-title');
+    }
+});
