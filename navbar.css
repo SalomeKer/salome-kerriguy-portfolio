@@ -98,7 +98,7 @@ a {
 }
 
 .menu-icon.active .bar:nth-child(1) {
-  transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-8px, 6px);
 }
 
 .menu-icon.active .bar:nth-child(3) {
@@ -131,13 +131,24 @@ a {
     z-index: 1000;
     padding-top: 60px;
     transition: all 0.3s ease;
+    margin-top: 40px;
+
+
   }
 
   .nav-link {
-    font-size: 25px;
-    padding: 15px;
+    display: flex;
+    justify-content: center;
+    font-family: 'PPEditorialNew';
+    font-size: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
     margin-left: auto;
     margin-right: auto;
+    border-bottom: 0.9px solid #151617;
+    width: 90%;
+
+
   }
 }
 
