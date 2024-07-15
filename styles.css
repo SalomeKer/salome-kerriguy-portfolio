@@ -403,8 +403,8 @@ h3 {
   font-size: 18.5px;
   width: 84%;
   line-height: normal;
-  font-family: 'PPNeueMontreal-book';
-  src: url('fonts/PPNeueMontreal-Book.otf') format('otf');
+  font-family: "PPNeueMontreal-book", sans-serif;
+  font-weight: 100;
 }
 
 
@@ -483,7 +483,7 @@ margin-left: 5Px;
   scroll-behavior: smooth;
 }
 
-.first, .section-cinema, .portfolio, .section-accroche, .footer {
+.first, .section-accroche, .card-row-01, .card-row-02, .card-row-03, .footer {
   scroll-snap-align: start;
 
 }
@@ -499,15 +499,88 @@ margin-left: 5Px;
 
 
 .portfolio {
-  position: relative;
-  height: 1200px;
-  background-color: #f7f7f5;
-  width: 100%;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px 0;
+  height: fit-content;
+  background-color: #f7f7f5;
+}
+
+.card-row {
+  display: flex;
+  height: 60vh;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 30px;
+  padding-top: 100px;
+  
+}
+
+.section-card {
+  width: 48%;
+  gap: 10px;
+  height: fit-content;
+  background-color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 60px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
+.section-card img {
+  width: 100%;
+  height: auto;
+  margin-top: 10px;
+}
+.card1{
+  transform: rotate(-2deg)
+}
+.card2{
+  margin-top: 120px;
+  transform: rotate(2deg)
+}
+.card3{
+  transform: rotate(-2deg)
+}
+.card4{
+  margin-top: 120px;
+  transform: rotate(2deg)
+}
+.card5{
+  transform: rotate(-2deg)
+}
+
+.card6{
+  margin-top: 120px;
+    transform: rotate(2deg)
+
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+
+
+  .card-row {
+      flex-direction: column;
+      align-items: center;
+      height: auto;
+    margin-bottom: 20px;
+    padding-top: 50px;
+  }
+  .card{
+    padding-bottom: 30px;
+  }
+  .section-card {
+      width: 100%;
+      margin-bottom: 20px;
+      margin-top: 10px;
+  }
+}
+
 
 .display{
   font-size: 8vw;
@@ -643,13 +716,27 @@ margin-left: 5Px;
     height: 100vh;
   }
   .footer-content {
-      flex-direction: column;
-      align-items: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
   }
-
   .footer-name,
   .footer-section {
-      min-width: 100%;
+    min-width: 100%;
+  }
+  .footer-name {
+    order: 3;
+  }
+  .footer-pratique {
+    order: 2;
+  }
+  .footer-contact {
+    order: 1;
+  }
+  .footer h4 {
+    margin-top: 20px;
+  }
+  .footer h3{
+    margin-top: 20px;
   }
 }
 
