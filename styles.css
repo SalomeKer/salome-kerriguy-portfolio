@@ -712,6 +712,14 @@ margin-left: 5Px;
 /* Media queries pour les petits écrans */
 @media screen and (max-width: 768px) {
 
+  .scroll-parent {
+    scroll-snap-type: none;
+  }
+
+  .first, .section-accroche, .card-row-01, .card-row-02, .card-row-03, .footer {
+    scroll-snap-align: none;
+  }
+
   .first{
     height: 100vh;
   }
@@ -782,6 +790,9 @@ margin-left: 5Px;
  
   .accroche-texte p{
     font-size: 15px;
+  }
+  .accroche-texte {
+    padding-bottom: 40px;
   }
   .cv-button {
     display: none;
