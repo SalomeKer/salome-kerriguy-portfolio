@@ -544,8 +544,23 @@ margin-left: 5Px;
   justify-content: center;
   align-items: center;
   border: 0.4px solid #151617;
+  transition: transform 0.3s ease; 
+  cursor: pointer;
+
+
 
 }
+
+.section-card:hover a {
+  
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+.section-card:hover {
+  transform: scale(1.01); 
+}
+
 
 .section-card img {
   width: 380px;

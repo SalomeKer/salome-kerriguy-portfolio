@@ -107,30 +107,6 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-document.addEventListener("DOMContentLoaded", function() {
-    const visualDesigner = document.getElementById('visual-designer');
-    let lastScrollTop = 0;
-
-    // Animation d'apparition lors du chargement de la page
-    window.onload = () => {
-        visualDesigner.style.opacity = '1';
-    };
-
-    // Animation lors du défilement
-    window.addEventListener('scroll', function() {
-        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        
-        if (scrollTop > lastScrollTop) {
-            // Scrolling down
-            visualDesigner.classList.add('shrink');
-        } else {
-            // Scrolling up
-            visualDesigner.classList.remove('shrink');
-        }
-        lastScrollTop = scrollTop;
-    });
-});
-
 function toggleTheme() {
     document.body.classList.toggle('alternate-theme');
 }
@@ -152,14 +128,3 @@ document.addEventListener("DOMContentLoaded", function() {
     }, 200); // Mettre à jour toutes les secondes (1000ms)
 });
 
-// Exemple de code JavaScript pour ajuster la classe du titre lorsque l'utilisateur atteint le footer
-window.addEventListener('scroll', function() {
-    var footer = document.querySelector('.footer');
-    var title = document.querySelector('.sticky-title');
-    
-    if (footer.getBoundingClientRect().top <= window.innerHeight) {
-        title.classList.remove('sticky-title');
-    } else {
-        title.classList.add('sticky-title');
-    }
-});

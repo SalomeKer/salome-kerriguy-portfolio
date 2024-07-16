@@ -174,6 +174,10 @@ body {
   width: 80%;
 }
 
+.loader{
+  display: none;
+}
+
 .project-images img {
   width: 100%;
   height: 700px;
@@ -184,7 +188,7 @@ body {
 .project-details {
   width: 20%;
   position: relative;
-  margin-left: 20px;
+  margin-left: 30px;
 }
 
 .sticky-container {
@@ -227,95 +231,117 @@ body {
 
 
 
-.nav-menu {
+.footer {
+  background-color: #f7f7f5; /* Couleur de fond de la section cinéma */
+  text-align: left;
+  font-family: "PPNeueMontreal-book", sans-serif;
+  font-weight: 100;
+  height: 300px;
+}
+
+.display2 {
+  font-size: 80px;
+  margin-left: 30px;
+  font-family: "PPEditorialNew", sans-serif;
+  margin-top: 30px;
+
+}
+
+.footer-container {
+  width: 100%;
+  padding: 30px;
+  border-top: 0.9px solid #151617;
   display: flex;
-  width: 100vw;
-  top: 0;
-  left: 0;
-  padding: 15px 60px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.footer-name {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-name h3 {
+  font-family: "PPEditorialNew", sans-serif;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.footer a {
+  border-top: 0.9px solid #151617;
+  padding-top : 8px;
+  padding-bottom : 8px;
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
-  z-index: 99999;
-  background-color: #f7f7f5;
-  backdrop-filter: blur(3px);
-  transition: top 0.3s ease;
-  border-bottom: 0.9px solid black;
-}
-
-.nav-link {
-  font-size: 13px;
-  font-family: "proxima-nova", sans-serif;
-  font-weight: 100;
-}
-
-.menu-icon {
-  display: none;
-  width: 40px;
-  height: 30px;
   cursor: pointer;
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  z-index: 1001;
+
+
 }
 
-.bar {
-  width: 100%;
-  height: 4px;
-  background-color: #151617;
-  margin: 6px auto;
+.footer-link:hover p{
+  padding-right: 0px;
+}
+
+.footer-link p{
+  font-size: 20px;
   transition: all 0.3s ease;
+  font-family: "PPEditorialNew", sans-serif;
+  cursor: pointer;
+}
+.footer-link p{
+  cursor: pointer;
+  padding-right: 10px;
+
 }
 
-.menu-icon.active .bar:nth-child(2) {
-  opacity: 0;
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+  margin-right: 20px;
 }
 
-.menu-icon.active .bar:nth-child(1) {
-  transform: rotate(-45deg) translate(-9px, 6px);
+.footer-section h4 {
+  font-size: 18px;
+  margin-bottom: 15px;
 }
 
-.menu-icon.active .bar:nth-child(3) {
-  transform: rotate(45deg) translate(-9px, -6px);
-}
 
-.mobile-links {
-  display: none;
-}
 
-@media screen and (max-width: 957px) {
-  .menu-icon {
-    display: block;
-  }
 
-  .nav-menu {
-    display: none;
-  }
 
-  .mobile-links {
-    display: flex;
+@media screen and (max-width: 768px) {
+
+  .footer-content {
     flex-direction: column;
-    position: fixed;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100vh;
-    color: #151617;
-    background-color: #f7f7f5;
-    z-index: 999;
-    padding-top: 60px;
-    transition: all 0.3s ease;
+    align-items: flex-start;
   }
-
-  .nav-link {
-    font-size: 25px;
-    padding: 15px;
-    margin-left: auto;
-    margin-right: auto;
+  .footer-name,
+  .footer-section {
+    min-width: 100%;
+  }
+  .footer-name {
+    order: 3;
+  }
+  .footer-pratique {
+    order: 2;
+  }
+  .footer-contact {
+    order: 1;
+  }
+  .footer h4 {
+    margin-top: 20px;
+  }
+  .footer h3{
+    margin-top: 20px;
   }
 }
 
-.mobile-links.active {
-  left: 0;
-}
