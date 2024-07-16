@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.typekit.net/mek2guw.css">
+    <title>Projet - Portfolio Salomé Kerriguy</title>
+    <link rel="stylesheet" href="vespa.css">
+    <link rel="stylesheet" href="navbar.css">
+
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+    <main class="project-page">
+        <div class="project-header">
+            <a href="index.html" class="back-link"><p>←</p>Accueil</a>
+            <span>|</span>
+            <h1 class="project-title">Vespa Primavera</h1>
+        </div>
+        <div class="loader" id="loader">
+            <div class="loader-content">
+              <div class="counter" id="counter">0%</div>
+            </div>
+          </div>
+        <div class="space1"></div>
+        <section class="project-description">
+            <h3>Création d'un site vitrine / one page pour le lancement de la nouvelle gamme de Vespa, Primavera Electrica</h3>
+        </section>
+        <div class="space1"></div>
+        <div class="project-content">
+            <div class="project-images">
+                <video controls autoplay muted loop>
+                    <source src="images/vespa.mov" type="video/mp4">
+                    Votre navigateur ne supporte pas la balise vidéo.
+                </video>
+                <video controls autoplay muted loop>
+                    <source src="images/vespa2.mov" type="video/mp4">
+                    Votre navigateur ne supporte pas la balise vidéo.
+                </video>
+                <img src="images/vespa3.png" alt="Image 2">
+            </div>
+            <aside class="project-details">
+                <div class="sticky-container">
+                    <div class="problem-section">
+                        <h5>PROBLÉMATIQUE</h5>
+                        <p>Comment mettre en avant la nouvelle gamme de Vespa les "Primavera" et inciter les acheteurs potentiels à réaliser des devis, tout en séparant cette nouvelle gamme du site principal de la marque ?</p>
+                    </div>
+                    <div class="problem-section">
+                        <h5>SOLUTION</h5>
+                        <p>La réalisation d'un site vitrine rattaché au site principal de Vespa a été décidée afin de mieux séparer les demandes de devis liées à cette nouvelle gamme, nécessitant une gestion différente. <br><br>Une attention toute particulière a été portée sur l'emplacement des appels à l'action et la mise en avant des offres de financement proposées par la marque. Le style du site vitrine s'inspire de la tendance du Bento design afin de mettre en valeur les courbes et la modernité du nouveau modèle de scooter, tout en facilitant l'adaptation responsive.</p>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+    <section id="footer" class="footer">
+        <div class="display2">À bientôt !</div>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-name">
+                    <h3>Salomé Kerriguy</h3>
+                    <p>All rights reserved © 2024</p>
+                </div>
+                <div class="footer-section footer-pratique">
+                    <h4>PRATIQUE</h4>
+                    <a class="footer-link" href="https://salomeker.github.io/salome-kerriguy-portfolio/images/CV-KERRIGUY-SALOMÉ-2025.pdf" target="_blank">Téléchargez mon CV !<p>→</p></a>
+                    <a class="footer-link" href="https://www.linkedin.com/in/salomé-kerriguy-227431218/" target="_blank">Mon LinkedIn<p>→</p></a>
+                </div>
+                <div class="footer-section footer-contact">
+                    <h4>CONTACT</h4>
+                    <a class="footer-link" href="mailto:salomekerriguy.c@gmail.com">salomekerriguy.c@gmail.com<p>→</p></a>
+                    <a class="footer-link" href="">+33 01 02 03 04 05 <p>→</p></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Fonction pour charger la navigation bar à partir de navbar.html
+            function loadNavbar() {
+                const xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === XMLHttpRequest.DONE) {
+                        if (xhr.status === 200) {
+                            document.getElementById('navbar-placeholder').innerHTML = xhr.responseText;
+                        } else {
+                            console.error('Erreur de chargement de la navigation bar : ' + xhr.status);
+                            // Gérer l'erreur : par exemple, afficher un message d'erreur alternatif
+                            document.getElementById('navbar-placeholder').innerHTML = '<div>Erreur lors du chargement de la navigation bar.</div>';
+                        }
+                    }
+                };
+                xhr.open('GET', 'navbar.html', true);
+                xhr.send();
+            }
+
+            // Appeler la fonction pour charger la navigation bar
+            loadNavbar();
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
