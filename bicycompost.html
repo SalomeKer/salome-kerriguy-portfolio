@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.typekit.net/mek2guw.css">
+    <title>Projet - Portfolio Salomé Kerriguy</title>
+    <link rel="icon" href="images/favicon.svg" type="images/x-icon">
+
+    <link rel="stylesheet" href="bicycompost.css">
+    <link rel="stylesheet" href="navbar.css">
+
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+    <main class="project-page">
+        <div class="project-header">
+            <a href="index.html" class="back-link"><p>←</p>Accueil</a>
+            <span>|</span>
+            <h1 class="project-title">BicyCompost</h1>
+        </div>
+        <div class="loader" id="loader">
+            <div class="loader-content">
+              <div class="counter" id="counter">0%</div>
+            </div>
+          </div>
+        <div class="space1"></div>
+        <section class="project-description">
+            <h3>Refonte de l'identité visuelle et du site d'un service de collecte et de valorisation de biodéchets bordelais.</h3>
+        </section>
+        <div class="space1"></div>
+        <div class="project-content">
+            <div class="project-images">
+                <video controls autoplay muted loop>
+                    <source src="images/bicycompost1.mov" type="video/mp4">
+                    Votre navigateur ne supporte pas la balise vidéo.
+                </video>
+                <img src="images/bicycompost2.jpg" alt="Image 2">
+            </div>
+            <aside class="project-details">
+                <div class="sticky-container">
+                    <div class="problem-section">
+                        <h5>PROBLÉMATIQUE</h5>
+                        <p>Remoderniser et adapter l'identité visuelle et le site internet d'un service de collecte de biodéchets souhaitant étendre son cœur de cible au niveau national.</p>
+                    </div>
+                    <div class="problem-section">
+                        <h5>SOLUTION</h5>
+                        <p>Dans le but de vulgariser la gestion des biodéchets, l'ancienne identité de l'entreprise avait été conçue de manière à rendre le sujet très simple et amusant. Cet esprit ne correspondait plus à la cible de Bicycomposte, le service souhaitant passer des petites entreprises locales, comme les restaurateurs, à des plus gros groupes situés également au niveau national. La refonte a donc été orientée vers une identité plus professionnelle, et les informations ont été réhiérarchisées de manière à correspondre à un plus grand cœur de cible.</p>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+    <section id="footer" class="footer">
+        <div class="display2">À bientôt !</div>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-name">
+                    <h3>Salomé Kerriguy</h3>
+                    <p>All rights reserved © 2024</p>
+                </div>
+                <div class="footer-section footer-pratique">
+                    <h4>PRATIQUE</h4>
+                    <a class="footer-link" href="https://salomeker.github.io/salome-kerriguy-portfolio/images/CV-KERRIGUY-SALOMÉ-2025.pdf" target="_blank">Téléchargez mon CV !<p>→</p></a>
+                    <a class="footer-link" href="https://www.linkedin.com/in/salomé-kerriguy-227431218/" target="_blank">Mon LinkedIn<p>→</p></a>
+                </div>
+                <div class="footer-section footer-contact">
+                    <h4>CONTACT</h4>
+                    <a class="footer-link" href="mailto:salomekerriguy.c@gmail.com">salomekerriguy.c@gmail.com<p>→</p></a>
+                    <a class="footer-link" href="">+33 01 02 03 04 05 <p>→</p></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Fonction pour charger la navigation bar à partir de navbar.html
+            function loadNavbar() {
+                const xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === XMLHttpRequest.DONE) {
+                        if (xhr.status === 200) {
+                            document.getElementById('navbar-placeholder').innerHTML = xhr.responseText;
+                        } else {
+                            console.error('Erreur de chargement de la navigation bar : ' + xhr.status);
+                            // Gérer l'erreur : par exemple, afficher un message d'erreur alternatif
+                            document.getElementById('navbar-placeholder').innerHTML = '<div>Erreur lors du chargement de la navigation bar.</div>';
+                        }
+                    }
+                };
+                xhr.open('GET', 'navbar.html', true);
+                xhr.send();
+            }
+
+            // Appeler la fonction pour charger la navigation bar
+            loadNavbar();
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

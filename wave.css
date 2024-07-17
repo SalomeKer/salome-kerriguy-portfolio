@@ -183,6 +183,11 @@ body {
   object-fit: contain;
 }
 
+.project-images video {
+  width: 100%;
+  object-fit: contain;
+}
+
 .project-images .image-row {
   display: flex;
   justify-content: space-between;
