@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.typekit.net/mek2guw.css">
+    <title>Projet - Portfolio Salomé Kerriguy</title>
+    <link rel="icon" href="images/favicon.svg" type="images/x-icon">
+
+    <link rel="stylesheet" href="wave.css">
+    <link rel="stylesheet" href="navbar.css">
+
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+    <main class="project-page">
+        <div class="project-header">
+            <a href="index.html" class="back-link"><p>←</p>Accueil</a>
+            <span>|</span>
+            <h1 class="project-title">Wave</h1>
+        </div>
+        <div class="loader" id="loader">
+            <div class="loader-content">
+              <div class="counter" id="counter">0%</div>
+            </div>
+          </div>
+        <div class="space1"></div>
+        <section class="project-description">
+            <h3>Création d'une application de rencontres pour professionnels et artistes du monde de la musique.</h3>
+        </section>
+        <div class="space1"></div>
+        <div class="project-content">
+            <div class="project-images">
+                <img src="images/fusion-01.png" alt="Image 2">
+                <div class="image-row">
+                    <img src="images/fusion-02.png" alt="Image 3">
+                    <img src="images/fusion-03.png" alt="Image 4">
+                </div>
+                <div class="image-row">
+                    <video controls autoplay muted loop>
+                        <source src="images/fusion-3.mov" type="video/mp4">
+                        Votre navigateur ne supporte pas la balise vidéo.
+                    </video>
+                    <img src="images/fusion-04.png" alt="Image 4">
+                </div>
+            </div>
+            <aside class="project-details">
+                <div class="sticky-container">
+                    <div class="problem-section">
+                        <h5>PROBLÉMATIQUE</h5>
+                        <p>Le monde de la musique est un milieu très mouvant. Les changements de styles de vie entraînent souvent la fin des collaborations entre les groupes, et trouver le musicien idéal parmi une multitude de styles et de références musicales différentes n'est pas chose facile. <br><br><strong>Comment faciliter les rencontres et collaborations entre différents artistes du monde de la musique ?</strong></p>
+                    </div>
+                    <div class="problem-section">
+                        <h5>SOLUTION</h5>
+                        <p>La réalisation d'une application axée sur la mise en avant des créations/démos des musiciens et de recommandations générées via algorithme afin de cibler le plus précisément possible les matchs idéaux.<br><br>L'application permettrait de mettre en avant aussi bien des extraits musicaux que des vidéos/reels du quotidien des artistes afin de mettre la personnalité de l'utilisateur au même niveau d'importance que ses créations musicales.</p>
+                    </div>
+                </div>
+            </aside>
+        </div>
+        
+    </main>
+    <section id="footer" class="footer">
+        <div class="display2">À bientôt !</div>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-name">
+                    <h3>Salomé Kerriguy</h3>
+                    <p>All rights reserved © 2024</p>
+                </div>
+                <div class="footer-section footer-pratique">
+                    <h4>PRATIQUE</h4>
+                    <a class="footer-link" href="https://salomeker.github.io/salome-kerriguy-portfolio/images/CV-KERRIGUY-SALOMÉ-2025.pdf" target="_blank">Téléchargez mon CV !<p>→</p></a>
+                    <a class="footer-link" href="https://www.linkedin.com/in/salomé-kerriguy-227431218/" target="_blank">Mon LinkedIn<p>→</p></a>
+                </div>
+                <div class="footer-section footer-contact">
+                    <h4>CONTACT</h4>
+                    <a class="footer-link" href="mailto:salomekerriguy.c@gmail.com">salomekerriguy.c@gmail.com<p>→</p></a>
+                    <a class="footer-link" href="">+33 01 02 03 04 05 <p>→</p></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Fonction pour charger la navigation bar à partir de navbar.html
+            function loadNavbar() {
+                const xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === XMLHttpRequest.DONE) {
+                        if (xhr.status === 200) {
+                            document.getElementById('navbar-placeholder').innerHTML = xhr.responseText;
+                        } else {
+                            console.error('Erreur de chargement de la navigation bar : ' + xhr.status);
+                            // Gérer l'erreur : par exemple, afficher un message d'erreur alternatif
+                            document.getElementById('navbar-placeholder').innerHTML = '<div>Erreur lors du chargement de la navigation bar.</div>';
+                        }
+                    }
+                };
+                xhr.open('GET', 'navbar.html', true);
+                xhr.send();
+            }
+
+            // Appeler la fonction pour charger la navigation bar
+            loadNavbar();
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
