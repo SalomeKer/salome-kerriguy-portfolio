@@ -400,3 +400,12 @@ body {
   }
 }
 
+.project-images video {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
