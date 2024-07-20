@@ -180,13 +180,27 @@ body {
 
 .project-images img {
   width: 100%;
-  height: fit-content;
   object-fit: contain;
-  margin-bottom: 20px;
 }
 
 .project-images video {
   width: 100%;
+  object-fit: contain;
+}
+
+.project-images .image-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px; /* Espace entre la première image et les deux images côte à côte */
+}
+
+.project-images .image-row img {
+  width: 48.7%; /* Chaque image prend 48% de la largeur pour laisser un espace entre elles */
+  object-fit: contain;
+}
+
+.project-images .image-row video {
+  width: 48.7%; /* Chaque image prend 48% de la largeur pour laisser un espace entre elles */
   object-fit: contain;
 }
 
@@ -215,6 +229,10 @@ body {
 /* Responsive Styles */
 @media screen and (max-width: 1100px) {
 
+  .problem-section h5 {
+    margin-top: 20px;
+  }
+
   .project-description{
     max-width: 80%;
   }
@@ -234,14 +252,36 @@ body {
 /* Responsive Styles */
 @media screen and (max-width: 900px) {
   .project-description{
+    
     max-width: 70%;
   }
+
   
 }
 
 
 /* Responsive Styles */
 @media screen and (max-width: 768px) {
+  .image-row{
+    flex-direction: column;
+    margin-top: 0px;
+  }
+
+  .project-images .image-row{
+    margin-top: 0px;
+  }
+
+  .project-images .image-row img {
+    width: 100%; /* Chaque image prend 48% de la largeur pour laisser un espace entre elles */
+    margin-top: 20px;
+    object-fit: contain;
+  }
+  
+  .project-images .image-row video {
+    width: 100%; /* Chaque image prend 48% de la largeur pour laisser un espace entre elles */
+    object-fit: contain;
+    margin-top: 20px;
+  }
   .project-description{
     max-width: 80%;
   }
@@ -273,12 +313,6 @@ body {
   }
 
 }
-
-
-
-
-
-
 
 .footer {
   background-color: #f7f7f5; /* Couleur de fond de la section cinéma */
@@ -369,6 +403,7 @@ body {
 
 @media screen and (max-width: 768px) {
 
+
   .footer-content {
     flex-direction: column;
     align-items: flex-start;
@@ -394,6 +429,7 @@ body {
   }
 }
 
+
 .project-images video {
   width: 100%;
   height: auto;
@@ -402,12 +438,4 @@ body {
   margin: 0;
   padding: 0;
   border: none;
-}
-
-.project-images video {
-  width: 100%;
-  height: fit-content;
-  object-fit: contain;
-  margin-bottom: 20px;
-
 }

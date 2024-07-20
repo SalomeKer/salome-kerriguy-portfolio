@@ -475,19 +475,6 @@ margin-left: 5Px;
 
 
 
-
-.scroll-parent {
-  height: 100vh;
-  overflow-y: scroll;
-  scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
-}
-
-.first, .section-accroche, .card-row-01, .card-row-02, .card-row-03, .footer {
-  scroll-snap-align: start;
-
-}
-
 .first {
   padding-top: 50px;
 
@@ -502,7 +489,7 @@ margin-left: 5Px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 100px 0;
+  padding: 180px 0;
   height: fit-content;
   z-index: 9999;
 
@@ -516,7 +503,7 @@ margin-left: 5Px;
   text-align: center;
   background-color: #f7f7f5; /* Fond pour contraste */
   z-index: -1000; /* Assure que le titre reste au-dessus du contenu */
-  font-size: 130px; /* Ajustez la taille de police selon votre besoin */
+  font-size: 80px; /* Ajustez la taille de police selon votre besoin */
   font-family: "PPEditorialNew", sans-serif;
   font-weight: 100;
   padding: 10px 0; /* Espace intérieur pour le titre */
