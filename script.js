@@ -128,3 +128,65 @@ document.addEventListener("DOMContentLoaded", function() {
     }, 200); // Mettre à jour toutes les secondes (1000ms)
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+    // Vérifier si la page actuelle est la page d'accueil
+    if (window.location.pathname === '/' || window.location.pathname === '/index-copy.html') {
+        // Fonction pour charger la navigation bar à partir de navbar.html
+        function loadNavbar() {
+            fetch('navbar.html')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Erreur de chargement de la navigation bar : ' + response.status);
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    document.getElementById('navbar-placeholder').innerHTML = data;
+                    // Appeler addScrollListener après le chargement de la navigation bar
+                    addScrollListener();
+                })
+                .catch(error => {
+                    console.error('Erreur lors du chargement de la navigation bar : ', error);
+                    document.getElementById('navbar-placeholder').innerHTML = '<div>Erreur lors du chargement de la navigation bar.</div>';
+                });
+        }
+
+        function addScrollListener() {
+            const navbar = document.querySelector('.nav-menu');
+            const sectionFirst = document.getElementById('first');
+
+            function toggleNavbarColor() {
+                const sectionFirstTop = sectionFirst.getBoundingClientRect().top;
+                const sectionFirstBottom = sectionFirst.getBoundingClientRect().bottom;
+
+                // Vérifiez si la section 'first' est dans la vue
+                if (sectionFirstTop < window.innerHeight && sectionFirstBottom > 0) {
+                    navbar.classList.add('white');
+                } else {
+                    navbar.classList.remove('white');
+                }
+            }
+
+            // Écoutez les événements de défilement pour appliquer le changement de style
+            window.addEventListener('scroll', toggleNavbarColor);
+
+            // Écoutez les événements de survol pour appliquer le changement de style
+            sectionFirst.addEventListener('mouseenter', function () {
+                navbar.classList.add('white');
+            });
+            sectionFirst.addEventListener('mouseleave', function () {
+                const sectionFirstTop = sectionFirst.getBoundingClientRect().top;
+                const sectionFirstBottom = sectionFirst.getBoundingClientRect().bottom;
+                if (!(sectionFirstTop < window.innerHeight && sectionFirstBottom > 0)) {
+                    navbar.classList.remove('white');
+                }
+            });
+
+            // Initial call to set the color based on the current scroll position
+            toggleNavbarColor();
+        }
+
+        // Appeler la fonction pour charger la navigation bar
+        loadNavbar();
+    }
+});

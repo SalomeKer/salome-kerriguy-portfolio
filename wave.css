@@ -430,6 +430,13 @@ body {
 }
 
 
+
+a {
+  text-decoration: none;
+  color: #151617;
+}
+
+
 .project-images video {
   width: 100%;
   height: auto;

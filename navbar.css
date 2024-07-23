@@ -42,14 +42,10 @@ iframe {
   box-sizing: border-box;
 }
 body {
-  color: #151617;
-  background-color: #f7f7f5;
   background-position: center;
 }
-
-a {
-  text-decoration: none;
-  color: #151617;
+.nav a {
+  color: #000000;
 }
 
 .nav-menu {
@@ -62,16 +58,16 @@ a {
   align-items: center;
   position: fixed;
   z-index: 99999;
-  background-color: #f7f7f5;
-  backdrop-filter: blur(3px);
+  backdrop-filter: blur(10px);
   transition: top 0.3s ease;
-  border-bottom: 0.9px solid black;
+  border-bottom: 0.9px solid rgb(0, 0, 0);
 }
 
 .nav-link {
   font-size: 13px;
   font-family: "PPNeueMontreal-book", sans-serif;
   font-weight: 100;
+  color: #000000;
 }
 
 .menu-icon {
@@ -151,6 +147,15 @@ a {
   }
 }
 
-.mobile-links.active {
-  left: 0;
+/* Ajoutez ceci dans votre fichier CSS */
+.nav-menu.white {
+  border-bottom: 0.9px solid #ffffff;
+}
+
+.nav-menu.white .nav-link {
+  color: #ffffff !important;
+}
+
+.menu-icon.white .bar {
+  background-color: #ffffff !important;
 }
