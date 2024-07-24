@@ -60,13 +60,13 @@ a {
   justify-content: center;
   align-items: center;
   z-index: 10000000;
-  transition: opacity 0.5s ease; /* Ajout d'une transition d'opacité */
-  opacity: 1; /* Assure que l'écran de chargement est visible au chargement */
+  transition: opacity 0.5s ease; 
+  opacity: 1; 
 }
 
 .loader.hidden {
-  opacity: 0; /* Réduit l'opacité pour cacher l'écran de chargement */
-  pointer-events: none; /* Désactive les événements souris pour les éléments cachés */
+  opacity: 0; 
+  pointer-events: none;
 }
 
 .loader-content {
@@ -78,7 +78,7 @@ a {
   font-size: 150px;
   margin-left: 30px;
   font-family: "PPEditorialNew", sans-serif;
-  transition: opacity 0.5s ease-in-out; /* Transition pour rendre les changements de texte plus fluides */
+  transition: opacity 0.5s ease-in-out; 
 }
 
 
@@ -123,9 +123,9 @@ a {
   padding-right: 50px;
   background-image: url('images/7.png');
   height: 100vH;
-  background-size: cover; /* Ou contain, ou des dimensions spécifiques */
-  background-position: center; /* Ou top, bottom, left, right, ou des valeurs spécifiques */
-  background-repeat: no-repeat; /* Ou repeat, repeat-x, repeat-y */
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
   color: #f7f7f5;
 }
 
@@ -251,8 +251,8 @@ h3 {
   transition: color 0.2s, background-color 0.4s, transform 0.4s;
   z-index: 999;
   cursor: pointer;
-  display: flex; /* Utilisation de flexbox pour aligner les éléments */
-  align-items: center; /* Centrage vertical */
+  display: flex; 
+  align-items: center;
 }
 
 .cv-button a{
@@ -268,9 +268,9 @@ h3 {
 }
 
 .icon-wrapper {
-  display: inline-block; /* Utilisation de inline-block pour ajuster les marges */
-  margin-right: 2px; /* Ajustement de la marge droite de l'icône */
-  vertical-align: middle; /* Alignement vertical central */
+  display: inline-block; 
+  margin-right: 2px; 
+  vertical-align: middle; 
 }
 
 .material-symbols-outlined {
@@ -299,8 +299,8 @@ h3 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex-wrap: nowrap; /* Ensure text and line stay on the same line */
-  white-space: nowrap; /* Prevent line breaking */
+  flex-wrap: nowrap; 
+  white-space: nowrap; 
 }
 
 .line-text-container h2 {
@@ -371,7 +371,7 @@ h3 {
 
 
 .bloc-cinema-img {
-  position: relative; /* Permet de positionner les tags absolument par rapport à ce conteneur */
+  position: relative; 
   background-image: url('images/a2.jpg');
   width: 70%;
   height: 100%;
@@ -386,7 +386,7 @@ h3 {
 
 
 .case-study-button:hover {
-  transform: scale(1.05); /* Grossissement léger lors du survol */
+  transform: scale(1.05); 
 }
 
 
@@ -489,7 +489,7 @@ margin-left: 5Px;
 
 #visual-designer {
   opacity: 0;
-  animation: fadeIn 2s ease forwards; /* Durée de l'animation de 2 secondes */
+  animation: fadeIn 2s ease forwards; 
   transition: transform 0.5s, opacity 0.5s;
 }
 
@@ -706,7 +706,7 @@ margin-left: 5Px;
 
 
 .footer {
-  background-color: #ebeae6; /* Couleur de fond de la section cinéma */
+  background-color: #ebeae6; 
   text-align: left;
   font-family: "PPNeueMontreal-book", sans-serif;
   font-weight: 100;
@@ -856,7 +856,7 @@ margin-left: 5Px;
     flex-direction: column;
   }
   .project-wrapper1 {
-    display: none !important; /* Utilisez !important pour garantir que la règle est appliquée */
+    display: none !important; 
   }
 
 }
@@ -959,7 +959,7 @@ margin-left: 5Px;
     width: 90%;
   }
   .carousel-item {
-    flex: 0 40%; /* Each item takes 40% of the container width */
+    flex: 0 40%; 
     box-sizing: border-box;
     padding-right: 60px;
   }
