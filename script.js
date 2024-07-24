@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 document.addEventListener('DOMContentLoaded', function () {
     // Vérifier si la page actuelle est la page d'accueil
-    if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
+    if (document.getElementById('home')) {
         // Charger la navbar
 
 
@@ -88,17 +88,13 @@ document.addEventListener('DOMContentLoaded', function () {
             function toggleNavbarColor() {
                 const sectionFirstTop = sectionFirst.getBoundingClientRect().top;
                 const sectionFirstBottom = sectionFirst.getBoundingClientRect().bottom;
-                console.log('sectionFirstTop', sectionFirstTop);
-                console.log('sectionFirstBottom', sectionFirstBottom);
 
 
                 // Vérifiez si la section 'first' est dans la vue
                 if (sectionFirstTop < window.innerHeight && sectionFirstBottom > 0) {
                     navbar.classList.add('white');
-                    console.log('navbar.classList.add(white)');
                 } else {
                     navbar.classList.remove('white');
-                    console.log('navbar.classList.remove(white)');
                 }
             }
 
