@@ -31,6 +31,7 @@
 body {
   color: #151617;
   background-position: center;
+  background-color: #ebeae6;
 
 }
 
@@ -608,10 +609,32 @@ margin-left: 5Px;
 @media screen and (max-width: 768px) {
   .space2{
     height: 30px;
+    
+  }
+  .accroche-texte{
+    width: 90%;
   }
 
+  .sticky-title h3{
+    font-size: 60px;
+    padding-bottom: 8px;
+  }
+  .sticky-title h4{
+    font-size:25px;
+  }
   .sticky-title{
-    display: none;
+    flex-direction: column;
+  
+
+  }
+  .portfolio{
+    padding: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .works-details{
+    width: 90%;
   }
 
   .section-card img {
@@ -848,12 +871,15 @@ margin-left: 5Px;
     margin-top: 100px;
   }
  
+  .section-accroche{
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
   .accroche-texte p{
-    font-size: 15px;
+    font-size: 25px;
+    text-align: left;
   }
-  .accroche-texte {
-    padding-bottom: 40px;
-  }
+  
   .cv-button {
     display: none;
   }

@@ -97,12 +97,12 @@ document.addEventListener("DOMContentLoaded", function() {
     }, 200); // Mettre à jour toutes les secondes (1000ms)
 });
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Vérifier si la page actuelle est la page d'accueil
     if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
         // Fonction pour charger la navigation bar à partir de navbar.html
         function loadNavbar() {
-            fetch('navbar.html?cache_bust=' + new Date().getTime()) // Ajout du paramètre de cache buste
+            fetch('navbar.html')
                 .then(response => {
                     if (!response.ok) {
                         throw new Error('Erreur de chargement de la navigation bar : ' + response.status);
@@ -111,10 +111,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 })
                 .then(data => {
                     document.getElementById('navbar-placeholder').innerHTML = data;
-                    console.log('Navbar chargée avec succès.');
-
-                    // Une fois la navigation chargée, attacher les événements
-                    attachNavbarEvents();
+                    // Appeler addScrollListener après le chargement de la navigation bar
                     addScrollListener();
                 })
                 .catch(error => {
@@ -123,70 +120,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
         }
 
-        // Fonction pour attacher les événements à la barre de navigation
-        function attachNavbarEvents() {
-            const menuIcon = document.querySelector('.menu-icon');
-            const navMenu = document.querySelector('.nav-menu');
-            const mobileLinks = document.querySelector('.mobile-links');
-
-            // Gérer l'activation et la désactivation du menu burger
-            menuIcon.addEventListener('click', function() {
-                menuIcon.classList.toggle('active');
-                mobileLinks.classList.toggle('active');
-            });
-
-            // Fermer le menu mobile lorsqu'on clique en dehors du menu
-            document.addEventListener('click', function(event) {
-                if (!navMenu.contains(event.target) && !menuIcon.contains(event.target)) {
-                    mobileLinks.classList.remove('active');
-                    menuIcon.classList.remove('active');
-                }
-            });
-
-            // Fermer le menu mobile lorsqu'on clique sur un lien
-            document.querySelectorAll('.mobile-links a').forEach(link => {
-                link.addEventListener('click', function() {
-                    mobileLinks.classList.remove('active');
-                    menuIcon.classList.remove('active');
-                });
-            });
-
-            // Smooth scroll pour tous les liens internes
-            document.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', function(event) {
-                    // Vérifie si le lien pointe vers une ancre dans la même page
-                    if (this.hash !== "" && this.pathname === window.location.pathname) {
-                        // Empêche le comportement par défaut de l'ancre
-                        event.preventDefault();
-                        // Stocke l'identifiant de l'ancre
-                        var hash = this.hash;
-                        // Fait défiler en douceur jusqu'à l'ancre avec une durée d'animation
-                        document.querySelector(hash).scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start',
-                            inline: 'nearest',
-                            duration: 1000 // Durée de l'animation en millisecondes
-                        });
-                    }
-                });
-            });
-        }
-
-        // Fonction pour ajouter un écouteur de défilement à la navigation bar
         function addScrollListener() {
             const navbar = document.querySelector('.nav-menu');
             const sectionFirst = document.getElementById('first');
-
-            // Vérifier que les éléments existent
-            if (!navbar) {
-                console.error('Navbar non trouvée.');
-                return;
-            }
-
-            if (!sectionFirst) {
-                console.error('Section "first" non trouvée.');
-                return;
-            }
 
             function toggleNavbarColor() {
                 const sectionFirstTop = sectionFirst.getBoundingClientRect().top;
@@ -195,10 +131,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Vérifiez si la section 'first' est dans la vue
                 if (sectionFirstTop < window.innerHeight && sectionFirstBottom > 0) {
                     navbar.classList.add('white');
-                    console.log('Navbar devenue blanche.');
                 } else {
                     navbar.classList.remove('white');
-                    console.log('Navbar redevenue noire.');
                 }
             }
 
