@@ -79,24 +79,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Vérifier si la page actuelle est la page d'accueil
     if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
         // Charger la navbar
-        function loadNavbar() {
-            fetch('navbar.html')
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Erreur de chargement de la navigation bar : ' + response.status);
-                    }
-                    return response.text();
-                })
-                .then(data => {
-                    document.getElementById('navbar-placeholder').innerHTML = data;
-                    // Appeler addScrollListener après le chargement de la navigation bar
-                    addScrollListener();
-                })
-                .catch(error => {
-                    console.error('Erreur lors du chargement de la navigation bar : ', error);
-                    document.getElementById('navbar-placeholder').innerHTML = '<div>Erreur lors du chargement de la navigation bar.</div>';
-                });
-        }
+
 
         function addScrollListener() {
             const navbar = document.querySelector('.nav-menu');
@@ -136,6 +119,25 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Initial call to set the color based on the current scroll position
             toggleNavbarColor();
+        }
+
+        function loadNavbar() {
+            fetch('navbar.html')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Erreur de chargement de la navigation bar : ' + response.status);
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    document.getElementById('navbar-placeholder').innerHTML = data;
+                    // Appeler addScrollListener après le chargement de la navigation bar
+                    addScrollListener();
+                })
+                .catch(error => {
+                    console.error('Erreur lors du chargement de la navigation bar : ', error);
+                    document.getElementById('navbar-placeholder').innerHTML = '<div>Erreur lors du chargement de la navigation bar.</div>';
+                });
         }
 
         // Appeler la fonction pour charger la navigation bar
