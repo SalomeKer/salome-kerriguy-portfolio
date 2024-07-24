@@ -58,7 +58,8 @@ body {
   align-items: center;
   position: fixed;
   z-index: 99999;
-  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(30px);
+  backdrop-filter: blur(30px);
   transition: top 0.3s ease;
   border-bottom: 0.9px solid rgb(0, 0, 0);
 }
