@@ -30,15 +30,22 @@
 }
 body {
   color: #151617;
-  background-color: #f7f7f5;
   background-position: center;
+
 }
+
 a {
   text-decoration: none;
   color: #151617;
 }
 */*/*/
+.arrow{
+  font-family: "PPEditorialNew", sans-serif;
+  text-align: center;
+  color: #f7f7f5;
+  font-size: 60px;
 
+}
 
 
 .loader {
@@ -88,13 +95,14 @@ a {
   border-radius: 25px;
   font-family: 'PPEditorialNew';
   font-weight: 100;
-  font-size: 14px;
+  font-size: 16px;
   text-transform: uppercase;
   text-decoration: none;
   color: #151617;
   transition: color 0.2s, background-color 0.4s, transform 0.4s;
   cursor: pointer;
   width: fit-content;
+  margin: auto;
 }
 
 .bouton:hover {
@@ -112,6 +120,12 @@ a {
 .first {
   padding-left: 50px;
   padding-right: 50px;
+  background-image: url('images/7.png');
+  height: 100vH;
+  background-size: cover; /* Ou contain, ou des dimensions spécifiques */
+  background-position: center; /* Ou top, bottom, left, right, ou des valeurs spécifiques */
+  background-repeat: no-repeat; /* Ou repeat, repeat-x, repeat-y */
+  color: #f7f7f5;
 }
 
 p {
@@ -143,16 +157,17 @@ h2 {
 }
 
 h4 {
-  font-size: 25px;
+  font-size: 35px;
   font-family: "PPEditorialNew", sans-serif;
   font-weight: 100;
+  letter-spacing: normal;
 }
 
 h3 {
-  font-size: 58px;
+  font-size: 110px;
   font-family: "PPEditorialNew", sans-serif;
   font-weight: 100;
-  line-height: 70px;
+  line-height: auto;
 }
 
 .flex-space{
@@ -208,7 +223,7 @@ h3 {
   justify-content: center;
   width: 100%;
   text-align: center;
-  margin-top: 100px;
+  margin-top: 130px;
   font-family: "PPNeueMontreal-book", sans-serif;
   font-weight: 100;
   font-size: 15px;
@@ -217,23 +232,21 @@ h3 {
 
 .cv-button {
   margin-top: 60px;
-  margin-right: 30px;
   position: fixed;
-  top: 20px;
+  bottom: 20px;
   right: 20px;
   padding-top: 8px;
   padding-bottom: 4px;
   padding-left: 20px;
   padding-right: 20px;
-  background-color: #f7f7f5;
-  border: 0.9px solid #151617;
+  border: 0.9px solid #ffffff;
   border-radius: 25px;
   font-family: "PPNeueMontreal-book", sans-serif;
   font-weight: 100;
   font-size: 14px;
   text-transform: uppercase;
   text-decoration: none;
-  color: #000000;
+  color: #ffffff;
   transition: color 0.2s, background-color 0.4s, transform 0.4s;
   z-index: 999;
   cursor: pointer;
@@ -241,12 +254,16 @@ h3 {
   align-items: center; /* Centrage vertical */
 }
 
+.cv-button a{
+  color: #ffffff;
+}
+
 .cv-button:hover {
   background-color: #151617;
 }
 
 .cv-button:hover a {
-  color: #f7f7f5;
+  color: #ffffff;
 }
 
 .icon-wrapper {
@@ -257,6 +274,7 @@ h3 {
 
 .material-symbols-outlined {
   font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+  color: #ffffff;
 }
 
 
@@ -346,7 +364,7 @@ h3 {
 .line-skills{
   width: 0.5px;
   height: 20px;
-  background-color: #151617;
+  background-color: #f7f7f5;
 }
 
 
@@ -380,35 +398,38 @@ h3 {
   width: 100%;
   display: flex;
   height: 700px;
+  justify-content: center;
+  margin: auto;
+  background-color:  #f39130;
+ 
+
 }
 
 .accroche-texte{
-  width: 100%;
-  background-color:  #b6e1f8;
-  height: 100%;
-  color: #151617;
-  padding-top: 90px;
-  padding-left: 30px;
-  padding-right: 30px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  border-top: 0.9px solid #151617;
-  border-bottom: 0.9px solid #151617;
-
-
-
-
+justify-content: center;
+margin: auto;
+text-align: center;
+width: 68%;
 }
 
+.accroche-texte img{
+  width: 10%;
+  height: 100%;
+  margin: auto;
+}
 
 .accroche-texte p{
-  font-size: 18.5px;
-  width: 84%;
-  line-height: normal;
-  font-family: "PPNeueMontreal-book", sans-serif;
-  font-weight: 100;
+
+font-size: 40px;
+line-height: normal;
+font-family: "PPEditorialNew", sans-serif;
+font-weight: 100;
+letter-spacing: normal;
 }
+
+
 
 
 .accroche-img{
@@ -447,7 +468,7 @@ h3 {
   flex-direction: column;
 }
 .tiny-text p{
-  font-size: 10px;
+  font-size: 20px;
 }
 
 .span-line{
@@ -492,25 +513,26 @@ margin-left: 5Px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 180px 0;
+  padding: 160px 0;
   height: fit-content;
   z-index: 9999;
+  background-color: #ebeae6;
 
 }
+
+
+.works-details{
+  width: 50%;
+ }
 
 .sticky-title {
-  position: sticky;
-  top: 50%; /* Pour le centrage vertical */
-  transform: translateY(-50%);
+  display: flex;
+  margin: auto;
   width: 100%;
-  text-align: center;
-  background-color: #f7f7f5; /* Fond pour contraste */
-  z-index: -1000; /* Assure que le titre reste au-dessus du contenu */
-  font-size: 80px; /* Ajustez la taille de police selon votre besoin */
-  font-family: "PPEditorialNew", sans-serif;
-  font-weight: 100;
-  padding: 10px 0; /* Espace intérieur pour le titre */
+  justify-content: space-around;
 }
+
+
 
 .card-row {
   display: flex;
@@ -660,12 +682,8 @@ margin-left: 5Px;
 
 
 
-
-
-
-
 .footer {
-  background-color: #f7f7f5; /* Couleur de fond de la section cinéma */
+  background-color: #ebeae6; /* Couleur de fond de la section cinéma */
   text-align: left;
   font-family: "PPNeueMontreal-book", sans-serif;
   font-weight: 100;
@@ -750,9 +768,6 @@ margin-left: 5Px;
     width: 300PX;
     height: auto;
     margin-top: 10PX;
-  }
-  .first{
-    padding-top: 0px;
   }
   .section-accroche{
     height: fit-content;
@@ -932,3 +947,7 @@ margin-left: 5Px;
 }
 
 
+a {
+  text-decoration: none;
+  color: #151617;
+}

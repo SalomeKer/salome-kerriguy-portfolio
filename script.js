@@ -74,37 +74,6 @@ document.addEventListener('DOMContentLoaded', function() {
     loadNavbar();
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-    const slides = document.querySelectorAll('.carousel-item');
-    const prevButton = document.querySelector('.carousel-button.prev');
-    const nextButton = document.querySelector('.carousel-button.next');
-    let currentIndex = 0;
-    const itemsPerSlide = 2.5; // We want to show 2 full items and half of the third one
-
-    function showSlide(index) {
-        const totalItems = slides.length;
-        if (index >= totalItems / itemsPerSlide) {
-            currentIndex = 0;
-        } else if (index < 0) {
-            currentIndex = Math.ceil(totalItems / itemsPerSlide) - 1;
-        } else {
-            currentIndex = index;
-        }
-
-        const offset = -currentIndex * 80; // Adjust offset for showing 2.5 items
-        document.querySelector('.carousel-container').style.transform = `translateX(${offset}%)`;
-    }
-
-    prevButton.addEventListener('click', function() {
-        showSlide(currentIndex - 1);
-    });
-
-    nextButton.addEventListener('click', function() {
-        showSlide(currentIndex + 1);
-    });
-
-    showSlide(currentIndex); // Show the first slide initially
-});
 
 
 function toggleTheme() {
@@ -130,7 +99,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 document.addEventListener('DOMContentLoaded', function () {
     // Vérifier si la page actuelle est la page d'accueil
-    if (window.location.pathname === '/' || window.location.pathname === '/index-copy.html') {
+    if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
         // Fonction pour charger la navigation bar à partir de navbar.html
         function loadNavbar() {
             fetch('navbar.html')
