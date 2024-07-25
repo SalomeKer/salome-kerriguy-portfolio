@@ -468,9 +468,6 @@ letter-spacing: normal;
   display: flex;
   flex-direction: column;
 }
-.tiny-text p{
-  font-size: 20px;
-}
 
 .span-line{
   width: 1px;
@@ -547,9 +544,9 @@ margin-left: 5Px;
 }
 
 .section-card {
-  width: fit-content;
+  width: 420px;
   gap: 10px;
-  height: fit-content;
+  height: auto;
   background-color: white;
   padding: 20px;
   display: flex;
@@ -560,8 +557,10 @@ margin-left: 5Px;
   transition: transform 0.3s ease; 
   cursor: pointer;
 
+}
 
-
+.section-card h4{
+  font-size: 25px;
 }
 
 .section-card:hover a {
@@ -576,7 +575,7 @@ margin-left: 5Px;
 
 
 .section-card img {
-  width: 380px;
+  width: 100%;
   height: auto;
   margin-top: 10px;
 }
@@ -638,7 +637,7 @@ margin-left: 5Px;
   }
 
   .section-card img {
-    width: 300px;
+    width: 100%;
     height: auto;
     margin-top: 10px;
   }
@@ -654,9 +653,11 @@ margin-left: 5Px;
     padding-bottom: 30px;
   }
   .section-card {
-      width: 100%;
+      width: 350px;
+      padding: 20px;
       margin-bottom: 0px;
       margin-top: 50px;
+      height: fit-content;
   }
 }
 
@@ -675,23 +676,6 @@ margin-left: 5Px;
   display: none;
 }
 
-.section-card{
-  width: fit-content;
-  gap: 10px;
-  height: fit-content;
-  background-color: white;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.section-card img{
-  width: 400PX;
-  height: auto;
-  margin-top: 10PX;
-}
 
 .link-project a {
   transition: padding-left 0.3s ease, padding-right 0.3s ease;
@@ -787,11 +771,7 @@ margin-left: 5Px;
 /* Media queries pour les petits écrans */
 @media screen and (max-width: 768px) {
 
-  .section-card img{
-    width: 300PX;
-    height: auto;
-    margin-top: 10PX;
-  }
+
   .section-accroche{
     height: fit-content;
   }
@@ -929,9 +909,12 @@ margin-left: 5Px;
 
 
 @media screen and (max-width: 500px) {
+  .section-card{
+    width: 300px;
+  }
 
   .section-card img {
-    width: 250px;
+    width: 100%;
   }
   .accroche-texte p{
     width: 100%;
@@ -967,6 +950,10 @@ margin-left: 5Px;
 
 
 @media screen and (max-width: 350px) {
+
+  .section-card{
+    width: 100%;
+  }
   h3 {
     font-size: 30px;
   }
