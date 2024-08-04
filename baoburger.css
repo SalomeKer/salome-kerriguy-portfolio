@@ -270,9 +270,15 @@ body {
 }
 
 
+.flex {
+  display: flex;
+  width: 100%;
+  gap: 15px;
+}
 
-
-
+.flex img{
+  width: 49%;
+}
 
 
 .footer {

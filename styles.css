@@ -580,12 +580,12 @@ margin-left: 5Px;
   margin-top: 10px;
 }
 .card1{
-  transform: rotate(-2deg);
-
-}
-.card2{
   margin-top: 160px;
   transform: rotate(2deg)
+}
+.card2{
+  transform: rotate(-2deg);
+
 }
 .card3{
   transform: rotate(-2deg)
